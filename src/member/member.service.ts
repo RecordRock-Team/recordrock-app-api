@@ -1,7 +1,7 @@
 import { Repository } from 'typeorm';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Member } from './schemas/member.schema';
+import { Member } from './entities/member.entity';
 
 @Injectable()
 export class MemberService {
