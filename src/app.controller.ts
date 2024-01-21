@@ -7,31 +7,12 @@ export class AppController {
 
   @Get('/test')
   getHello(): string {
-    console.log("들어왔다~");
+    console.log('들어왔다~');
     return this.appService.getHello();
   }
 
   @Get('/calendar')
   async getCalendar() {
-    const calendarInfo = [
-      {
-        "center_fullname": "더클라임 사당점", 
-        "clear_record": "[ {보라:3}, {남색:4} ]",
-        "daily_memo": "행클했다",
-        "day": 22,
-        "workout_time_hour": 3,
-        "workout_time_minute": 25 
-      
-      },
-      {
-        "center_fullname": "더클라임 사당점", 
-        "clear_record": "[ {보라:3}, {남색:7} ]",
-        "daily_memo": "빵클했다",
-        "day": 22,
-        "workout_time_hour": 3,
-        "workout_time_minute": 25 
-      }
-    ]
-    return calendarInfo;
+    return this.appService.getCalendar();
   }
 }
