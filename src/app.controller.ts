@@ -10,9 +10,4 @@ export class AppController {
     console.log('들어왔다~');
     return this.appService.getHello();
   }
-
-  @Get('/calendar')
-  async getCalendar() {
-    return this.appService.getCalendar();
-  }
 }

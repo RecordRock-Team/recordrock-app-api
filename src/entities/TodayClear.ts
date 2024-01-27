@@ -2,8 +2,8 @@ import { Column, Entity } from "typeorm";
 
 @Entity("today_clear", { schema: "climber" })
 export class TodayClear {
-  @Column("int", { primary: true, name: "clearn_no" })
-  clearnNo: number;
+  @Column("int", { primary: true, name: "clear_no" })
+  clearNo: number;
 
   @Column("int", { name: "mem_no", nullable: true })
   memNo: number | null;

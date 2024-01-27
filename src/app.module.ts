@@ -31,10 +31,10 @@ import { WorkoutTime } from './entities/WorkoutTime';
       password: '1234',
       database: 'climber',
       entities: [
-        Member,
         Center,
         CenterLogo,
         DifficultyPerCenter,
+        Member,
         Platform,
         Profile,
         RefreshTokens,
