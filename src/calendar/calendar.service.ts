@@ -13,6 +13,7 @@ import { CenterRepository } from 'src/repositories/calendar.repository';
 import { TodayClearRepository } from 'src/repositories/today_clear.repository';
 import { WorkoutNoteRepository } from 'src/repositories/workout_note.repository';
 import { Utils } from 'src/common/utils/date';
+import { dataSource } from '../database/data_source';
 
 @Injectable()
 export class CalendarService {
@@ -47,19 +48,22 @@ export class CalendarService {
     const memNo = 1; // 로그인 정보에서 가져올것
     // mem_no로 1월 한달 간 클리어한 center_no 리스트 조회
     const month = Utils.monthFromDatetime(period);
-
-    /* ** 작업중 **
-      const entityManager = EntityManager;
-      const clearInfos: TodayClear[] = await entityManager.
-      this.todayClearRepository.find({
-        where: { 
-          memNo: memNo,
-          regDate:
-        }
+      // TodayClear[]
+      console.log(dataSource)
+      const clearInfos = await dataSource
+        .createQueryBuilder()
+        .select("today_clear")
+        .from(TodayClear, "today_clear")
+        .getMany();
         
-      });
-      console.log(clearInfos); 
-    */
+      // this.todayClearRepository.find({
+      //   where: { 
+      //     memNo: memNo,
+      //     regDate:
+      //   }
+      // });
+      // console.log(clearInfos); 
+   
     // console.log(await this.difficultyPerCenterRepository.find());
     // console.log(await this.centerRepository.find());
     // console.log(await this.todayClearRepository.find()); // regdate가 아닌 암장 방문한 날짜를 받을 데이트 타입 DB 추가 필요
