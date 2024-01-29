@@ -22,7 +22,7 @@ export class CalendarService {
     
     private readonly difficultyPerCenterRepository: DifficultyPerCenterRepository,
     
-    private readonly todayClearRepository: TodayClearRepository,
+    // private readonly todayClearRepository: TodayClearRepository,
     
     private readonly workoutNoteRepository: WorkoutNoteRepository,
     
@@ -46,23 +46,11 @@ export class CalendarService {
     let calendarInfo: CalendarDto[];
     // this.todayClear.findBy()
     const memNo = 1; // 로그인 정보에서 가져올것
+    
     // mem_no로 1월 한달 간 클리어한 center_no 리스트 조회
     const month = Utils.monthFromDatetime(period);
-      // TodayClear[]
-      console.log(dataSource)
-      const clearInfos = await dataSource
-        .createQueryBuilder()
-        .select("today_clear")
-        .from(TodayClear, "today_clear")
-        .getMany();
-        
-      // this.todayClearRepository.find({
-      //   where: { 
-      //     memNo: memNo,
-      //     regDate:
-      //   }
-      // });
-      // console.log(clearInfos); 
+    const clearInfos = await TodayClearRepository.createQueryBuilder("TodayClear").where("TodayClear.mem_no = :clearNo", {clearNo: 1}).getMany();
+    console.log(clearInfos);
    
     // console.log(await this.difficultyPerCenterRepository.find());
     // console.log(await this.centerRepository.find());

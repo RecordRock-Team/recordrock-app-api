@@ -1,3 +1,4 @@
+import { TodayClear } from "src/entities/TodayClear";
 import { DataSource } from "typeorm"
 
 export const dataSource = new DataSource({
@@ -7,7 +8,7 @@ export const dataSource = new DataSource({
     username: "root",
     password: "1234",
     database: "climber",
-    entities: ["src/entities/*.ts"]
+    entities: [TodayClear]
 })
 
 dataSource.initialize();

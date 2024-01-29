@@ -12,12 +12,12 @@ import { WorkoutTimeRepository } from 'src/repositories/workout_time.repository'
   imports: [TypeOrmModule.forFeature([
     CenterRepository, 
     DifficultyPerCenterRepository,
-    TodayClearRepository,
+    // TodayClearRepository,
     WorkoutNoteRepository,
     WorkoutTimeRepository
     ])
   ],
   controllers: [CalendarController],
-  providers: [CalendarService, CenterRepository, DifficultyPerCenterRepository, TodayClearRepository, WorkoutNoteRepository, WorkoutTimeRepository],
+  providers: [CalendarService, CenterRepository, DifficultyPerCenterRepository, /* TodayClearRepository, */ WorkoutNoteRepository, WorkoutTimeRepository],
 })
 export class CalendarModule {}
