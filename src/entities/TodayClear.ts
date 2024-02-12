@@ -17,6 +17,9 @@ export class TodayClear {
   @Column("int", { name: "count", nullable: true })
   count: number | null;
 
+  @Column("datetime", { name: "clear_date", nullable: true })
+  clearDate: Date | null;
+
   @Column("datetime", { name: "reg_date", nullable: true })
   regDate: Date | null;
 }

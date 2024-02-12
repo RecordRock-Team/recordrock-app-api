@@ -8,6 +8,7 @@
     "password": "1234",
     "database": "",
     "synchronize": false,
-    "entities": ["entities/*.js"]
+    "entities": ["entities/*.js"],
+    "logging": ["query"]
   }
 ]

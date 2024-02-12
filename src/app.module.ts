@@ -19,10 +19,6 @@ import { WorkoutTime } from './entities/WorkoutTime';
 
 @Module({
   imports: [
-    AuthModule,
-    MemberModule,
-    CalendarModule,
-    ConfigModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -43,7 +39,12 @@ import { WorkoutTime } from './entities/WorkoutTime';
         WorkoutTime,
       ],
       synchronize: false,
+      logging: true
     }),
+    AuthModule,
+    MemberModule,
+    CalendarModule,
+    ConfigModule,
   ],
   controllers: [AppController],
   providers: [AppService],

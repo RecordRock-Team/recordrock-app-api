@@ -11,6 +11,9 @@ export class WorkoutTime {
   @Column("int", { name: "workout_minute", nullable: true })
   workoutMinute: number | null;
 
+  @Column("datetime", { primary: true, name: "clear_date" })
+  clearDate: Date;
+  
   @Column("datetime", { primary: true, name: "reg_date" })
   regDate: Date;
 }
